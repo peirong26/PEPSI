@@ -1,0 +1,38 @@
+## job specific set ups ## 
+job_name: adni3_t1 
+exp_name: pepsi_pathol_seg
+init_method: "tcp://localhost:9999"
+
+out_root: 
+device_generator: #cuda:1
+
+# ADNI     ADNI3     ADHD200       AIBL        HCP    OASIS3     ATLAS     ISLES 
+#  T1     T1,FLAIR      T1     T1,T2,FLAIR    T1,T2     CT         T1      FLAIR
+dataset: ADNI3 
+probs:
+modality_input: T1 
+train_subset: #0.05
+train_txt: data/adni3/train.txt
+
+task: pathol  
+dataset_name: {'train': 'supervised', 'test': 'synth_id_deform'}
+task_f_maps: [64] 
+
+eval_only: False 
+debug: False
+
+resume: False
+reset_epoch: False
+resume_optim: True
+ckp_path:  
+feat_ext_ckp_path:  
+
+
+
+n_epochs: 2000
+lr_drops: []  
+
+
+batch_size: 4
+
+ 

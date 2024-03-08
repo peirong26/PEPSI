@@ -1,0 +1,53 @@
+## job specific set ups ## 
+job_name: cotrain
+exp_name: pepsi_pretrain
+init_method: "tcp://localhost:9999"
+
+
+
+## training dataset set up (synth for synthetic pre-training)
+# synth-ADNI     synth-ADNI_crop     synth-ADNI3     synth-BraTS     synth-ATLAS     synth-ISLES     ADNI     ADNI3     ADHD200       AIBL        HCP    OASIS3       BraTS
+#     T1             T1,FLAIR          T1,FLAIR        T1,FLAIR           T1             FLAIR     T1,FLAIR      T1     T1,T2,FLAIR    T1,T2     CT     T1,FLAIR    T1,FLAIR
+dataset: [synth-ADNI3, synth-ATLAS, synth-ISLES]
+probs:
+modality_target: T1  
+aux_modality: FLAIR  
+
+
+task: uni-feat-anat-flair-aux
+dataset_name: {'train': 'synth_id', 'test': 'synth_id_deform'}
+
+
+eval_only: False 
+debug: False
+
+
+resume: False
+reset_epoch: False
+resume_optim: True
+ckp_path:  
+
+
+n_epochs: 1000
+lr_drops: [] 
+
+
+
+mild_samples: 2
+all_samples: 4
+all_contrasts: 4 # >= 1, <= all_samples 
+
+
+unit_feat: True
+
+base_generator: 
+  pathology_synth_prob: True
+  pathology_prob: 1.
+
+
+losses:
+  implicit_pathol: True  
+supervised_pathol_seg_ckp_path: {'feat': 'ckp/supv_t12pathol_feat_epoch_1499.pth', 
+                                    'task': 'ckp/supv_t12pathol_epoch_1499.pth'}
+supervised_aux_pathol_seg_ckp_path: {'feat': 'ckp/supv_flair2pathol_feat_epoch_1499.pth', 
+                                  'task': 'ckp/supv_flair2pathol_epoch_1499.pth'}

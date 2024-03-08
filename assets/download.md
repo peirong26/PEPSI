@@ -1,0 +1,1 @@
+Please download PEPSI pre-trained weights (pepsi_pretrained.pth), and test images with pathologies (T1w.nii.gz, FLAIR.nii.gz) in this [Google Drive folder](https://drive.google.com/drive/folders/1Wbnjc8sf8T_YIjc91k0b2gMOQ5kz0Dw9?usp=sharing), and move them into the './assets' folder.
