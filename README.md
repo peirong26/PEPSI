@@ -15,8 +15,8 @@ Athinoula A. Martinos Center for Biomedical Imaging,<br /> Harvard Medical Schoo
 ## Environment
 Training and evaluation environment: Python 3.11.4, PyTorch 2.0.1, CUDA 12.2. Run the following command to install required packages.
 ```
-conda create -n PEPSI python=3.11
-conda activate PEPSI
+conda create -n pepsi python=3.11
+conda activate pepsi
 
 cd /path/to/pepsi
 pip install -r requirements.txt
@@ -95,7 +95,7 @@ You could customize your own data generator in `cfgs/demo_synth.yaml`.
 
 
 
-## Training on Synthetic Data
+## Training on Synthetic Data Encoded with Pathology
 
 <p align="center">
   <img src="./assets/framework.png" alt="drawing", width="850"/>
@@ -131,7 +131,7 @@ You could customize your own task by creating your own `cfgs/train/task_seg.yaml
 
 ## Download the Public Datasets
 
-- PEPSI pre-trained model: [Google Drive](https://drive.google.com/drive/folders/1Wbnjc8sf8T_YIjc91k0b2gMOQ5kz0Dw9?usp=sharing)
+- PEPSI pre-trained model and test images: [Google Drive](https://drive.google.com/drive/folders/1Wbnjc8sf8T_YIjc91k0b2gMOQ5kz0Dw9?usp=sharing)
 
 - ATLAS dataset: Request data from [official website](https://fcon_1000.projects.nitrc.org/indi/retro/atlas.html). 
 
@@ -173,3 +173,15 @@ After downloading the datasets needed, structure the data as follows, and set up
     subject_name.nii
     ...
 ```
+
+
+## Citation
+```bibtex
+@InProceedings{Liu_2024_PEPSI,
+    author    = {Liu, Peirong and Puonti, Oula and Sorby-Adams, Annabel and Kimberly, William T. and Iglesias, Juan E.},
+    title     = {PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI},
+    journal   = {arXiv},
+    year      = {2024},
+    volume    = {abs/2403.06227},
+}
+
