@@ -1,4 +1,4 @@
-## [PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI](https://arxiv.org/abs/2403.06227)
+## <p align="center">[PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI](https://arxiv.org/abs/2403.06227)</p>
 
 
 **<p align="center">Peirong Liu, Oula Puonti, Annabel Sorby-Adams, William T. Kimberly, Juan E. Iglesias</p>**
