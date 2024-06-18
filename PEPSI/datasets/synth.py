@@ -214,6 +214,7 @@ class BaseSynth(Dataset):
 
         # deform the images 
         xx2, yy2, zz2, x1, y1, z1, x2, y2, z2 = self.deform_image(Gshp, A, c2, F)
+        #xx2, yy2, zz2, x1, y1, z1, x2, y2, z2 = self.deform_surface(Gshp, A, c2, F) # two step
         
         return scaling_factor_distances, xx2, yy2, zz2, x1, y1, z1, x2, y2, z2
     
@@ -485,7 +486,8 @@ class BaseSynth(Dataset):
             Sdef_OneHot = torch.flip(Sdef_OneHot, [0])[:, :, :, self.vflip]
             if P is not None:
                 Pdef = torch.flip(Pdef, [0])
-            Ddef = torch.flip(Ddef, [0])[:, :, :, [2,3,0,1]]
+            if D is not None:
+                Ddef = torch.flip(Ddef, [0])[:, :, :, [2,3,0,1]]
             if Idef is not None:
                 Idef = torch.flip(Idef, [0])
             if Aux_I is not None:
@@ -527,6 +529,8 @@ class BaseSynth(Dataset):
             sample.update({'orig': SYN_def[None]})
         if P is not None:
             sample.update({'pathol': Pdef[None]})
+        if D is not None:
+            sample.update({'distance': Ddef[None]})
         if Aux_I is not None:
             sample.update({'aux_image': Aux_Idef[None]})
         return sample

@@ -67,7 +67,7 @@ class IDSynth(BaseSynth):
 
         G = torch.squeeze(torch.tensor(img.get_fdata()[x1:x2, y1:y2, z1:z2].astype(float), dtype=torch.float, device=self.device))
         
-        S = D = I = B = P = Pprob = Aux_I = Pprobdef = None
+        S = D = I = B = P = Pprob = Aux_I = Pprobdef = None # + Surface
         if self.seg_dir is not None:
             Simg = nib.load(os.path.join(self.seg_dir, os.path.basename(self.names[idx]).split('.')[0] + self.postfix))
             S = torch.squeeze(torch.tensor(Simg.get_fdata()[x1:x2, y1:y2, z1:z2].astype(int), dtype=torch.int, device=self.device))

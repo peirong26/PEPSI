@@ -134,7 +134,7 @@ def train_one_epoch_feature(epoch, args, model, processors, criterion, data_load
             epoch_vis_dir = utils.make_dir(os.path.join(output_dir, str(epoch), str(itr) + '-' + curr_dataset)) if epoch is not None else output_dir
 
             if postprocessor is not None:
-                outputs = postprocessor(args, outputs, task = args.task)
+                outputs, target = postprocessor(args, outputs, target = target, task = args.task)
             if args.visualizer.make_results:  
                 make_results(subjects, samples, outputs, out_dir = epoch_vis_dir)
 
@@ -249,7 +249,7 @@ def train_one_epoch_downstream(epoch, args, feat_extractor, model, processors,
             epoch_vis_dir = utils.make_dir(os.path.join(output_dir, str(epoch), str(itr) + '-' + curr_dataset)) if epoch is not None else output_dir
 
             if postprocessor is not None:
-                outputs = postprocessor(args, outputs, feats, task = args.task)
+                outputs, target = postprocessor(args, outputs, target = target, task = args.task)
             if args.visualizer.make_results:  
                 make_results(subjects, samples, outputs, out_dir = epoch_vis_dir)
 

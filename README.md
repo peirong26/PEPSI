@@ -1,4 +1,4 @@
-## <p align="center">[PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI](https://arxiv.org/abs/2403.06227)</p>
+## <p align="center">[PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI [MICCAI 2024]](https://arxiv.org/abs/2403.06227)</p>
 
 
 **<p align="center">Peirong Liu, Oula Puonti, Annabel Sorby-Adams, William T. Kimberly, Juan E. Iglesias</p>**
@@ -20,12 +20,6 @@ conda activate pepsi
 
 cd /path/to/pepsi
 pip install -r requirements.txt
-```
-Please also install [pytorch3dunet](https://github.com/wolny/pytorch-3dunet) according to the official instructions:
-```
-wget https://github.com/wolny/pytorch-3dunet
-cd /path/to/pytorch-3dunet
-python setup.py install
 ```
 
 
@@ -180,8 +174,7 @@ After downloading the datasets needed, structure the data as follows, and set up
 @InProceedings{Liu_2024_PEPSI,
     author    = {Liu, Peirong and Puonti, Oula and Sorby-Adams, Annabel and Kimberly, William T. and Iglesias, Juan E.},
     title     = {PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI},
-    journal   = {arXiv},
+    booktitle = {International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI)},
     year      = {2024},
-    volume    = {abs/2403.06227},
 }
 

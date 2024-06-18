@@ -199,22 +199,23 @@ def get_criterion(args, task, device):
 
 
 
-def get_postprocessor(args, outputs, feats = None, task = 'seg'):
+def get_postprocessor(args, outputs, target = None, feats = None, task = 'seg'):
     """
     output: list of output dict 
     feat: list of output dict from pre-trained feat extractor
     """
+    if target is not None and 'label' in target:
+        target['label'] = torch.tensor(args.base_generator.label_list_segmentation_with_csf, 
+                                        device = target['segmentation'].device)[torch.argmax(target['segmentation'], 1, keepdim = True)] # (b, n_labels, s, r, c) -> (b, s, r, c) 
+        
     for i, output in enumerate(outputs): 
         if feats is not None:
             output.update({'feat': feats[i]['feat']}) 
-        if 'seg' in args.task:
-            #output['label'] = torch.tensor(args.base_generator.label_list_segmentation_with_csf, 
-            #                             device = output['seg'].device)[torch.argmax(output['seg'][:, vflip], 1, keepdim = True)] # (b, n_labels, s, r, c) -> (b, s, r, c) 
+        if 'seg' in args.task: 
             output['label'] = torch.tensor(args.base_generator.label_list_segmentation_with_csf, 
-                                         device = output['seg'].device)[torch.argmax(output['seg'], 1, keepdim = True)] # (b, n_labels, s, r, c) -> (b, s, r, c) 
-        if 'pathol' in args.task: # TODO: should we restrict the prediction within white matter region only ?
-            pass
-    return outputs
+                                         device = output['seg'].device)[torch.argmax(output['seg'], 1, keepdim = True)] # (b, n_labels, s, r, c) -> (b, s, r, c)
+            
+    return outputs, target
 
 
 #############################################
