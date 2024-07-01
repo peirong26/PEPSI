@@ -1,10 +1,11 @@
 ## <p align="center">[[MICCAI 2024] PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI](https://arxiv.org/abs/2403.06227)</p>
 
 
-**<p align="center">Peirong Liu, Oula Puonti, Annabel Sorby-Adams, William T. Kimberly, Juan E. Iglesias</p>**
+**<p align="center">Peirong Liu<sup>1</sup>, Oula Puonti<sup>1</sup>, Annabel Sorby-Adams<sup>1</sup>, W. Taylor Kimberly<sup>1</sup>, Juan E. Iglesias<sup>1,2,3</sup></p>**
 
 <p align="center">
-Athinoula A. Martinos Center for Biomedical Imaging,<br /> Harvard Medical School and Massachusetts General Hospital
+<sup>1</sup>Harvard Medical School and Massachusetts General Hospital<br />
+<sup>2</sup>University College London &nbsp;&nbsp; <sup>3</sup>Massachusetts Institute of Technology
 </p>
 
 <p align="center">
@@ -172,8 +173,8 @@ After downloading the datasets needed, structure the data as follows, and set up
 ## Citation
 ```bibtex
 @InProceedings{Liu_2024_PEPSI,
-    author    = {Liu, Peirong and Puonti, Oula and Sorby-Adams, Annabel and Kimberly, William T. and Iglesias, Juan E.},
-    title     = {PEPSI: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain MRI},
+    author    = {Liu, Peirong and Puonti, Oula and Sorby-Adams, Annabel and Kimberly, W. Taylor and Iglesias, Juan E.},
+    title     = {{PEPSI}: Pathology-Enhanced Pulse-Sequence-Invariant Representations for Brain {MRI}},
     booktitle = {International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI)},
     year      = {2024},
 }
