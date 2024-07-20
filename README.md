@@ -139,10 +139,12 @@ You could customize your own task by creating your own `cfgs/train/task_seg.yaml
 - MSSEG2016 dataset: Request data from [official website](https://portal.fli-iam.irisa.fr/msseg-challenge/english-msseg-data/). 
 
 - Segmentation labels for data simulation: To train a PEPSI feature representation model of your own from scratch, one needs the segmentation labels for synthetic image simulation and their corresponding MP-RAGE/FLAIR images for dual-guidance (anatomy + pathology) supervision. We obtained our anatomy labels via three steps:
-     (1) Skull-strip: [SynthStrip toolbox](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/); 
-     (2) Inpaint the lesions: [SynthSR toolbox](https://surfer.nmr.mgh.harvard.edu/fswiki/SynthSR); 
+     (1) Inpaint the lesions: [SynthSR toolbox](https://surfer.nmr.mgh.harvard.edu/fswiki/SynthSR); 
+     (2) Skull-strip: [SynthStrip toolbox](https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/); 
      (3) Obtain anatomy segmentation labels: [SynthSeg toolbox](https://surfer.nmr.mgh.harvard.edu/fswiki/SynthSeg).
+Please refer to the pre-processing steps in `preprocess/generation_labels.py`.
 
+For obtaining the anatomy generation labels, we rely on [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/). Please install FreeSurfer first and activate the environment before running `preprocess/generation_labels.py`.
 
 
 ## Datasets
@@ -161,9 +163,14 @@ After downloading the datasets needed, structure the data as follows, and set up
   or_any_other_modality_you_have/
     subject_name.nii
     ...
-  segmentation_maps/
+    
+  label_maps_segmentation/
     subject_name.nii
     ...
+  label_maps_generation/
+    subject_name.nii
+    ...
+    
   pathology_maps/
     subject_name.nii
     ...
