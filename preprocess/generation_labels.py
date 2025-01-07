@@ -42,7 +42,7 @@ subjs = os.listdir(img_dir)
 subjs.sort()
 
 for i, name in enumerate(subjs): 
-    if name.startswith('sub-') and name.endswith('.nii'):
+    if name.startswith('sub-') and (name.endswith('.nii') or name.endswith('.nii.gz')):
         basename = name.split('.')[0]
         print('Now processing: %s (%d/%d)' % (name, i+1, len(subjs)))
 
