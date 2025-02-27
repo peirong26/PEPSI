@@ -13,6 +13,13 @@
 </p>
 
 
+## News
+
+[02/26/2025] Check out our latest CVPR'2025 work [here](https://github.com/peirong26/UNA) on synthesizing normal anatomy from diseased inputs via fluid-driven anomaly randomization.
+
+[08/09/2024] Check out our related ECCV'2024 work [here](https://github.com/peirong26/Brain-ID) on contrast-agnostic feature representations for learning anatomical features.
+
+
 ## Environment
 Training and evaluation environment: Python 3.11.4, PyTorch 2.0.1, CUDA 12.2. Run the following command to install required packages.
 ```
